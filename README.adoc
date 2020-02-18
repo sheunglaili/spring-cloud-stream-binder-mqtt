@@ -75,3 +75,36 @@ charset::
  +
 Default: `UTF-8`.
 
+[[mqtt-producer-properties]]
+==== Mqtt Producer Properties
+
+NOTE: To avoid repetition, Spring Cloud Stream supports setting values for all channels, in the format of `spring.cloud.stream.default.<property>=<value>`.
+
+The following properties are available for Mqtt producers only and
+must be prefixed with `spring.cloud.stream.mqtt.bindings.<channelName>.producer.`.
+
+clientId::
+identifies the client
++
+Default: `stream.client.id.source`.
+topic::
+the topic to which the sink will publish
++
+Default: `stream.mqtt`.
+qos::
+the quality of service to use
++
+Default: `1`.
+retained::
+whether to set the 'retained' flag
++
+Default: `false`.
+charset::
+ the charset used to convert bytes to String (when binary is false)
+ +
+Default: `UTF-8`.
+async::
+whether or not to use async sends
++
+Default: `false`.
+
