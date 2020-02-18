@@ -42,7 +42,8 @@ memory' or 'file'
 +
 Default: `true`.
 spring.cloud.stream.mqtt.binder.persistenceDirectory::
-Persistence directory+
+Persistence directory
++
 Default: `/tmp/paho`.
 
 [[mqtt-consumer-properties]]
@@ -53,4 +54,24 @@ NOTE: To avoid repetition, Spring Cloud Stream supports setting values for all c
 The following properties are available for Mqtt consumers only and
 must be prefixed with `spring.cloud.stream.mqtt.bindings.<channelName>.consumer.`.
 
-//TODO update bindings configuration properties
+clientId::
+identifies the client
++
+Default: `stream.client.id.source`.
+topics::
+the topic(s) (comma-delimited) to which the source will subscribe
++
+Default: `stream.mqtt`.
+qos::
+the qos; a single value for all topics or a comma-delimited list to match the topics
++
+Default: `0`.
+binary::
+true to leave the payload as bytes
++
+Default: `false`.
+charset::
+ the charset used to convert bytes to String (when binary is false)
+ +
+Default: `UTF-8`.
+
